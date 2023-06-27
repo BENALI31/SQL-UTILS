@@ -1,0 +1,20 @@
+select 
+nom_prenom,
+adresse,
+code_postal,
+ville,
+date_denvoi,
+type_de_travaux,
+from 
+(SELECT 
+nom_prenom,
+adresse,
+code_postal,
+ville,
+date_denvoi,
+type_de_travaux,
+ 
+unnest(array[pj1 ,si_pj1_autres_type ,pj2 ,si_pj2_autres_type ,pj3 ,si_pj3_autres_type ,pj4 ,si_pj4_autres_type ,pj5 ,si_pj5_autres_type ,pj6 ,si_pj6_autres_type ,pj7 ,si_pj7_autres_type ,pj8 ,si_pj8_autres_type ,pj9, si_pj9_autres_type]) AS nom_PJ
+FROM synthese_publipostage) ttl
+
+-- ces avec Postgressql
